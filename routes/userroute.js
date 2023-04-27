@@ -78,7 +78,7 @@ userRoute.patch("/update",async(req,res)=>{
             res.send({"msg":`No user found with the given id : ${Id}`})
         }else{
             await UserModel.findByIdAndUpdate({_id:Id},data);
-            res.status(201).send(`user id of ${Id} detials updated successfully`);
+            res.status(201).send({"msg":`user id of ${Id} detials updated successfully`});
         }
     } catch (error) {
         res.status(400).send({"msg":`No user found with the given id : ${Id}`})
